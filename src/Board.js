@@ -51,7 +51,7 @@ class Board extends Component{
         return(
             <div className='board'>
                 {this.state.notes.map(this.eachNote)}
-                <button onClick={this.add.bind(null,'New Note')} id='add'><FaPlus/></button>
+                <button onClick={this.add.bind(null,'Add Note')} id='add'><FaPlus/></button>
             </div>
         )
     }
