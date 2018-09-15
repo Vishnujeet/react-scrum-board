@@ -1,15 +1,14 @@
 {
-  "name": "react-scrum-board",
+  "name": "drap-drop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-icons": "^2.2.7",
-    "react-scripts": "1.0.16"
+    "firebase": "^5.4.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-scripts": "1.1.5"
   },
-  "author": "Vishnujeet Singh",
-  "license": "ISC",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

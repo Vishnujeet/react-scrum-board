@@ -1,8 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import Board from './Board'
-import registerServiceWorker from './registerServiceWorker'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App'
+import './index.css';
 
-ReactDOM.render(<Board count={50}/>, document.getElementById('root'))
-registerServiceWorker()
+import AppDragDrop from './components/AppDragDrop'
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
