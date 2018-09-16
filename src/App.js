@@ -14,7 +14,7 @@ class App extends Component {
     this.removeNote = this.removeNote.bind(this);
 
     this.apps = firebase.initializeApp(DB_CONFIG);
-    this.database = this.apps.database().ref().child('notes');
+    this.database = this.apps.database().ref().child('task');
 
     // We're going to setup the React state of our component
     this.state = {
@@ -66,12 +66,11 @@ class App extends Component {
       
    
         <div className="container-fluid">
-        <div class="row">      
-          <NoteForm addNote={this.addNote} />
-          </div>
-          <div className="row">
-          <AppdragDrop note={this.state.notes}/>  
-          </div>
+          <div>      
+            <NoteForm addNote={this.addNote} />
+            
+            <AppdragDrop note={this.state.notes}/>  
+            </div>
           
         </div>
     

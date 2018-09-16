@@ -32,7 +32,8 @@ export default class AppdraDrop extends Component{
        
        let tasks = this.state.tasks.filter((task) => {
            if (task.id === id) {
-               task.category = cat;           
+               task.category = cat;  
+               console.log(task)         
            }
            return task;
        });
@@ -46,6 +47,7 @@ export default class AppdraDrop extends Component{
     render() {
         var tasks = {
             Todo: [],
+            WIP:[],
             complete: []
         }
 
@@ -64,22 +66,32 @@ export default class AppdraDrop extends Component{
         return (
 
             <div className="container-drag">
-            <div>
+            <div className="row">
+                <h2 className="header">SCRUM BOARD</h2>
+                    <div className="todo col-sm-4"
+                        onDragOver={(e)=>this.onDragOver(e)}
+                        onDrop={(e)=>{this.onDrop(e, "Todo")}}>
+                        <span className="task-header">TO DO</span>
+                        {tasks.Todo}
+                    </div>
+
+                    <div className="col-sm-4 wip" 
+                        onDragOver={(e)=>this.onDragOver(e)}
+                        onDrop={(e)=>this.onDrop(e, "WIP")}>
+                        <span className="task-header">IN PROGRESS</span>
+                        {tasks.WIP}
+                    </div>
+            
+                    <div className="droppable col-sm-4" 
+                        onDragOver={(e)=>this.onDragOver(e)}
+                        onDrop={(e)=>this.onDrop(e, "complete")}>
+                        <span className="task-header">DONE :)</span>
+                        {tasks.complete}
+                    </div>
             </div>
-                <h2 className="header">DRAG & DROP DEMO</h2>
-                <div className="todo"
-                    onDragOver={(e)=>this.onDragOver(e)}
-                    onDrop={(e)=>{this.onDrop(e, "Todo")}}>
-                    <span className="task-header">todo</span>
-                    {tasks.Todo}
-                </div>
-        
-                <div className="droppable" 
-                    onDragOver={(e)=>this.onDragOver(e)}
-                    onDrop={(e)=>this.onDrop(e, "complete")}>
-                     <span className="task-header">COMPLETED</span>
-                     {tasks.complete}
-                </div>
+             
+
+
 
             </div>
         );

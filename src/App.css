@@ -10,7 +10,7 @@ App {
 
 .todo {
   position: absolute;
-  width: 300px;
+  width: 800px;
   height: 100vh;
   left: 0;
   top: 10;
@@ -18,43 +18,46 @@ App {
   border-right: 1px dotted;
 }
 
-.wip{
-  position: absolute;
-  width: 150px;
-  height: 100vh;
-   top: 10;
-  background-color: rgb(97, 29, 29);
-  border-left: 1px dotted;
-}
 .header {
   display: inline-block;
   margin: 0;
   padding: 0;
-  background-color: #E0E0E0;
+  background-color: rgb(11, 129, 70);
+  color: white;
   width:100%;
 }
 
 .task-header {
   display: inline-block;
-  background-color: skyblue;
+  background-color: rgb(29, 5, 97);
+  color: white;
   width:100%;
 }
 
 .droppable {
   position: absolute;
-  width: 300px;
+  width: 600px;
   height: 100vh;
   right: 0;
   top: 10;
-  background-color: #9E9E9E;
+  background-color: green;
   border-left: 1px dotted;
+}
+.wip {  
+  position: absolute;
+  width: 800px;
+  height: 100vh;
+  left: 500px;
+  top: 10;
+  background-color: yellow;
+  border-right: 1px dotted;
 }
 
 .draggable {
-  height: 150px;
-    width: 150px;
-    background-color: rgb(243, 28, 64);
-    margin: 2px 0;
+  height: 200px;
+    width: 200px;
+    background-color: rgb(146, 31, 50);
+    margin: 5px 10px;
     position: relative;
     cursor: -webkit-grab;
     -webkit-box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
