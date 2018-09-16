@@ -6,10 +6,11 @@ class Note extends Component{
 
     constructor(props){
         super(props);
-        this.noteContent = props.noteContent; 
-        this.noteType=props.noteType
-        this.noteId = props.noteId; 
+        this.noteContent = props.note.name; 
+        this.noteType=props.category
+        this.noteId = props.bgcolor; 
         this.handleRemoveNote = this.handleRemoveNote.bind(this);
+        console.log('s',props.note)
     }
 
     handleRemoveNote(id){

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Note from './Note/Note';
-import NoteForm from './NoteForm/NoteForm';
+import NoteForm from '../src/components/NoteForm';
 import { DB_CONFIG } from './config';
 import firebase from 'firebase/app';
 import 'firebase/database';
@@ -14,8 +13,8 @@ class App extends Component {
     this.addNote = this.addNote.bind(this);
     this.removeNote = this.removeNote.bind(this);
 
-    this.app = firebase.initializeApp(DB_CONFIG);
-    this.database = this.app.database().ref().child('notes');
+    this.apps = firebase.initializeApp(DB_CONFIG);
+    this.database = this.apps.database().ref().child('notes');
 
     // We're going to setup the React state of our component
     this.state = {
@@ -30,8 +29,9 @@ class App extends Component {
     this.database.on('child_added', snap => {
       previousNotes.push({
         id: snap.key,
-        taskName: snap.val().taskName,
-        taskType:snap.val().taskType
+        name: snap.val().name,
+        category:snap.val().category,
+        bgcolor:snap.val().bgcolor
       })
 
       this.setState({
@@ -69,7 +69,7 @@ class App extends Component {
         <div class="row">      
           <NoteForm addNote={this.addNote} />
           </div>
-          <div class="row">
+          <div className="row">
           <AppdragDrop note={this.state.notes}/>  
           </div>
           
