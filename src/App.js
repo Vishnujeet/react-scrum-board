@@ -4,7 +4,7 @@ import { DB_CONFIG } from './config';
 import firebase from 'firebase/app';
 import 'firebase/database';
 import './App.css';
-import AppdragDrop from './components/AppDragDrop'
+import ScrumBoard from './components/ScrumBoard'
 
 class App extends Component {
 
@@ -69,7 +69,7 @@ class App extends Component {
           <div>      
             <NoteForm addNote={this.addNote} />
             
-            <AppdragDrop note={this.state.notes}/>  
+            <ScrumBoard note={this.state.notes}/>  
             </div>
           
         </div>

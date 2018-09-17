@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../App.css'
 
-export default class AppdraDrop extends Component{
+export default class ScrumBoard extends Component{
     constructor(props){
         super(props)
        
