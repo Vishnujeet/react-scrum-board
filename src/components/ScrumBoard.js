@@ -75,7 +75,7 @@ export default class ScrumBoard extends Component{
                         {tasks.Todo}
                     </div>
 
-                    <div className="col-sm-4 wip" 
+                    <div className="wip col-sm-4 wip" 
                         onDragOver={(e)=>this.onDragOver(e)}
                         onDrop={(e)=>this.onDrop(e, "WIP")}>
                         <span className="task-header">IN PROGRESS</span>
